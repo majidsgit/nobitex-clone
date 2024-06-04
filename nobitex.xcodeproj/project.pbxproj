@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A8867002C0ED86F0004E7C3 /* nobitexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8866FF2C0ED86F0004E7C3 /* nobitexApp.swift */; };
+		9A8867022C0ED86F0004E7C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8867012C0ED86F0004E7C3 /* ContentView.swift */; };
+		9A8867042C0ED86F0004E7C3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8867032C0ED86F0004E7C3 /* Item.swift */; };
+		9A8867062C0ED8700004E7C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8867052C0ED8700004E7C3 /* Assets.xcassets */; };
+		9A8867092C0ED8700004E7C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A8867082C0ED8700004E7C3 /* Preview Assets.xcassets */; };
+		9A8867132C0ED8700004E7C3 /* nobitexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8867122C0ED8700004E7C3 /* nobitexTests.swift */; };
+		9A88671D2C0ED8700004E7C3 /* nobitexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88671C2C0ED8700004E7C3 /* nobitexUITests.swift */; };
+		9A88671F2C0ED8700004E7C3 /* nobitexUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A88671E2C0ED8700004E7C3 /* nobitexUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A88670F2C0ED8700004E7C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A8866F42C0ED86E0004E7C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A8866FB2C0ED86E0004E7C3;
+			remoteInfo = nobitex;
+		};
+		9A8867192C0ED8700004E7C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A8866F42C0ED86E0004E7C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A8866FB2C0ED86E0004E7C3;
+			remoteInfo = nobitex;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A8866FC2C0ED86F0004E7C3 /* nobitex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nobitex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8866FF2C0ED86F0004E7C3 /* nobitexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nobitexApp.swift; sourceTree = "<group>"; };
+		9A8867012C0ED86F0004E7C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9A8867032C0ED86F0004E7C3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9A8867052C0ED8700004E7C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A8867082C0ED8700004E7C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9A88670E2C0ED8700004E7C3 /* nobitexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nobitexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8867122C0ED8700004E7C3 /* nobitexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nobitexTests.swift; sourceTree = "<group>"; };
+		9A8867182C0ED8700004E7C3 /* nobitexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nobitexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A88671C2C0ED8700004E7C3 /* nobitexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nobitexUITests.swift; sourceTree = "<group>"; };
+		9A88671E2C0ED8700004E7C3 /* nobitexUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nobitexUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A8866F92C0ED86E0004E7C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A88670B2C0ED8700004E7C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A8867152C0ED8700004E7C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A8866F32C0ED86E0004E7C3 = {
+			isa = PBXGroup;
+			children = (
+				9A8866FE2C0ED86F0004E7C3 /* nobitex */,
+				9A8867112C0ED8700004E7C3 /* nobitexTests */,
+				9A88671B2C0ED8700004E7C3 /* nobitexUITests */,
+				9A8866FD2C0ED86F0004E7C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A8866FD2C0ED86F0004E7C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A8866FC2C0ED86F0004E7C3 /* nobitex.app */,
+				9A88670E2C0ED8700004E7C3 /* nobitexTests.xctest */,
+				9A8867182C0ED8700004E7C3 /* nobitexUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A8866FE2C0ED86F0004E7C3 /* nobitex */ = {
+			isa = PBXGroup;
+			children = (
+				9A8866FF2C0ED86F0004E7C3 /* nobitexApp.swift */,
+				9A8867012C0ED86F0004E7C3 /* ContentView.swift */,
+				9A8867032C0ED86F0004E7C3 /* Item.swift */,
+				9A8867052C0ED8700004E7C3 /* Assets.xcassets */,
+				9A8867072C0ED8700004E7C3 /* Preview Content */,
+			);
+			path = nobitex;
+			sourceTree = "<group>";
+		};
+		9A8867072C0ED8700004E7C3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9A8867082C0ED8700004E7C3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9A8867112C0ED8700004E7C3 /* nobitexTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A8867122C0ED8700004E7C3 /* nobitexTests.swift */,
+			);
+			path = nobitexTests;
+			sourceTree = "<group>";
+		};
+		9A88671B2C0ED8700004E7C3 /* nobitexUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A88671C2C0ED8700004E7C3 /* nobitexUITests.swift */,
+				9A88671E2C0ED8700004E7C3 /* nobitexUITestsLaunchTests.swift */,
+			);
+			path = nobitexUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A8866FB2C0ED86E0004E7C3 /* nobitex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A8867222C0ED8700004E7C3 /* Build configuration list for PBXNativeTarget "nobitex" */;
+			buildPhases = (
+				9A8866F82C0ED86E0004E7C3 /* Sources */,
+				9A8866F92C0ED86E0004E7C3 /* Frameworks */,
+				9A8866FA2C0ED86E0004E7C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = nobitex;
+			productName = nobitex;
+			productReference = 9A8866FC2C0ED86F0004E7C3 /* nobitex.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A88670D2C0ED8700004E7C3 /* nobitexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A8867252C0ED8700004E7C3 /* Build configuration list for PBXNativeTarget "nobitexTests" */;
+			buildPhases = (
+				9A88670A2C0ED8700004E7C3 /* Sources */,
+				9A88670B2C0ED8700004E7C3 /* Frameworks */,
+				9A88670C2C0ED8700004E7C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A8867102C0ED8700004E7C3 /* PBXTargetDependency */,
+			);
+			name = nobitexTests;
+			productName = nobitexTests;
+			productReference = 9A88670E2C0ED8700004E7C3 /* nobitexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A8867172C0ED8700004E7C3 /* nobitexUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A8867282C0ED8700004E7C3 /* Build configuration list for PBXNativeTarget "nobitexUITests" */;
+			buildPhases = (
+				9A8867142C0ED8700004E7C3 /* Sources */,
+				9A8867152C0ED8700004E7C3 /* Frameworks */,
+				9A8867162C0ED8700004E7C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A88671A2C0ED8700004E7C3 /* PBXTargetDependency */,
+			);
+			name = nobitexUITests;
+			productName = nobitexUITests;
+			productReference = 9A8867182C0ED8700004E7C3 /* nobitexUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A8866F42C0ED86E0004E7C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					9A8866FB2C0ED86E0004E7C3 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					9A88670D2C0ED8700004E7C3 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 9A8866FB2C0ED86E0004E7C3;
+					};
+					9A8867172C0ED8700004E7C3 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 9A8866FB2C0ED86E0004E7C3;
+					};
+				};
+			};
+			buildConfigurationList = 9A8866F72C0ED86E0004E7C3 /* Build configuration list for PBXProject "nobitex" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A8866F32C0ED86E0004E7C3;
+			productRefGroup = 9A8866FD2C0ED86F0004E7C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A8866FB2C0ED86E0004E7C3 /* nobitex */,
+				9A88670D2C0ED8700004E7C3 /* nobitexTests */,
+				9A8867172C0ED8700004E7C3 /* nobitexUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A8866FA2C0ED86E0004E7C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A8867092C0ED8700004E7C3 /* Preview Assets.xcassets in Resources */,
+				9A8867062C0ED8700004E7C3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A88670C2C0ED8700004E7C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A8867162C0ED8700004E7C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A8866F82C0ED86E0004E7C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A8867022C0ED86F0004E7C3 /* ContentView.swift in Sources */,
+				9A8867042C0ED86F0004E7C3 /* Item.swift in Sources */,
+				9A8867002C0ED86F0004E7C3 /* nobitexApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A88670A2C0ED8700004E7C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A8867132C0ED8700004E7C3 /* nobitexTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A8867142C0ED8700004E7C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A88671F2C0ED8700004E7C3 /* nobitexUITestsLaunchTests.swift in Sources */,
+				9A88671D2C0ED8700004E7C3 /* nobitexUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A8867102C0ED8700004E7C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A8866FB2C0ED86E0004E7C3 /* nobitex */;
+			targetProxy = 9A88670F2C0ED8700004E7C3 /* PBXContainerItemProxy */;
+		};
+		9A88671A2C0ED8700004E7C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A8866FB2C0ED86E0004E7C3 /* nobitex */;
+			targetProxy = 9A8867192C0ED8700004E7C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9A8867202C0ED8700004E7C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A8867212C0ED8700004E7C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A8867232C0ED8700004E7C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"nobitex/Preview Content\"";
+				DEVELOPMENT_TEAM = 6526WFULUB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.majidjamali.nobitex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A8867242C0ED8700004E7C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"nobitex/Preview Content\"";
+				DEVELOPMENT_TEAM = 6526WFULUB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.majidjamali.nobitex;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A8867262C0ED8700004E7C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6526WFULUB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.majidjamali.nobitexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nobitex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nobitex";
+			};
+			name = Debug;
+		};
+		9A8867272C0ED8700004E7C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6526WFULUB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.majidjamali.nobitexTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nobitex.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nobitex";
+			};
+			name = Release;
+		};
+		9A8867292C0ED8700004E7C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6526WFULUB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.majidjamali.nobitexUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = nobitex;
+			};
+			name = Debug;
+		};
+		9A88672A2C0ED8700004E7C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6526WFULUB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.majidjamali.nobitexUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = nobitex;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A8866F72C0ED86E0004E7C3 /* Build configuration list for PBXProject "nobitex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A8867202C0ED8700004E7C3 /* Debug */,
+				9A8867212C0ED8700004E7C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A8867222C0ED8700004E7C3 /* Build configuration list for PBXNativeTarget "nobitex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A8867232C0ED8700004E7C3 /* Debug */,
+				9A8867242C0ED8700004E7C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A8867252C0ED8700004E7C3 /* Build configuration list for PBXNativeTarget "nobitexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A8867262C0ED8700004E7C3 /* Debug */,
+				9A8867272C0ED8700004E7C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A8867282C0ED8700004E7C3 /* Build configuration list for PBXNativeTarget "nobitexUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A8867292C0ED8700004E7C3 /* Debug */,
+				9A88672A2C0ED8700004E7C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A8866F42C0ED86E0004E7C3 /* Project object */;
+}
