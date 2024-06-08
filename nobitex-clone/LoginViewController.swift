@@ -7,155 +7,270 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class HeaderItemCollectionViewCell: UICollectionViewCell {
+    
+    let stack = UIStackView()
+    let textView = UILabel()
+    let imageView = UIImageView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.spacing = 4.0
+        stack.distribution = .equalCentering
+        
+        
+        textView.font = .systemFont(ofSize: 12.0, weight: .semibold)
+        textView.textColor = .mainText
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        stack.addArrangedSubview(textView)
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        stack.addArrangedSubview(imageView)
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: stack, attribute: .width, multiplier: 0.0, constant: 20.0),
+        ])
+        
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(stack)
+        
+        contentView.layer.setAffineTransform(.init(scaleX: -1, y: 1))
+    }
+    
+    func layoutViews() {
+        let minSize = frame.size
+        let intercellSideSpacing = 8.0
+        let imagesize = imageView.intrinsicContentSize.width
+        let stackSize = textView.intrinsicContentSize.width + imagesize + stack.spacing + (intercellSideSpacing * 2)
+        
+        let width = stackSize > minSize.width ? stackSize : minSize.width
+        let space = minSize.width - stackSize
+        
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: stack, attribute: .centerX, relatedBy: .equal, toItem: contentView, attribute: .centerX, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: stack, attribute: .centerY, relatedBy: .equal, toItem: contentView, attribute: .centerY, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal, toItem: contentView, attribute: .height, multiplier: 0.0, constant: minSize.height),
+            
+//            NSLayoutConstraint(item: stack, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: intercellSideSpacing + space / 2),
+//            NSLayoutConstraint(item: stack, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1.0, constant: -(intercellSideSpacing + space / 2)),
+            
+            NSLayoutConstraint(item: contentView, attribute: .width, relatedBy: .lessThanOrEqual, toItem: contentView, attribute: .width, multiplier: 0.0, constant: width),
+        ])
+        
+//        if stackSize < minSize.width {
+//            let space = minSize.width - stackSize
+//            NSLayoutConstraint.activate([
+//                
+//            ])
+//        } else {
+//            NSLayoutConstraint.activate([
+//                NSLayoutConstraint(item: stack, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1.0, constant: intercellSideSpacing),
+//                NSLayoutConstraint(item: stack, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1.0, constant: -intercellSideSpacing),
+//            ])
+//        }
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+}
+
+class LoginFormHeaderView: UIStackView {
+    
+    var headerItems = [FrameHeader]()
     
     private var timer: Timer? = nil
+    private let frameTop = UIView()
+    let cellIdentifier = "headerCell"
+    private var headerCollection: UICollectionView? = nil
     
-    func topView() -> UIView {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 12
-        stack.distribution = .fill
+    init() {
+        super.init(frame: .zero)
         
-        let image = UIImageView(image: UIImage(named: "logo"))
-        image.translatesAutoresizingMaskIntoConstraints = false
+        let layout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        layout.scrollDirection = .horizontal
         
-        let text = UILabel()
-        text.text = "NOBITEX"
-        text.font = .systemFont(ofSize: 48.0, weight: .semibold)
-        text.textColor = .mainTheme
-        text.translatesAutoresizingMaskIntoConstraints = false
+        headerCollection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        headerCollection?.register(HeaderItemCollectionViewCell.self,
+                                   forCellWithReuseIdentifier: cellIdentifier)
+        headerCollection?.delegate = self
+        headerCollection?.dataSource = self
+        headerCollection?.backgroundColor = .clear
+        headerCollection?.showsHorizontalScrollIndicator = false
+        headerCollection?.layer.setAffineTransform(.init(scaleX: -1, y: 1))
         
-        stack.addArrangedSubview(image)
-        stack.addArrangedSubview(text)
-        
+        frameTop.translatesAutoresizingMaskIntoConstraints = false
+        self.addArrangedSubview(frameTop)
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: image, attribute: .width, relatedBy: .equal, toItem: stack, attribute: .width, multiplier: 0.0, constant: 45.0),
-            NSLayoutConstraint(item: image, attribute: .height, relatedBy: .equal, toItem: stack, attribute: .height, multiplier: 0.0, constant: 45.0),
+            NSLayoutConstraint(item: frameTop, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0.0, constant: 50),
+            NSLayoutConstraint(item: frameTop, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: 0.0),
+        ])
+        frameTop.layer.cornerRadius = 10.0
+        frameTop.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        headerCollection?.translatesAutoresizingMaskIntoConstraints = false
+        frameTop.addSubview(headerCollection!)
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: headerCollection!, attribute: .height, relatedBy: .equal, toItem: frameTop, attribute: .height, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: headerCollection!, attribute: .width, relatedBy: .equal, toItem: frameTop, attribute: .width, multiplier: 1.0, constant: 0.0),
         ])
         
-        return stack
     }
     
-    func createFormView() {
-        let formStack = UIStackView()
-        formStack.axis = .vertical
-        formStack.distribution = .equalSpacing
-        formStack.alignment = .center
-        formStack.spacing = 20
-        
-        let topView = topView()
-        topView.translatesAutoresizingMaskIntoConstraints = false
-        formStack.addArrangedSubview(topView)
-        
-        let headers = [
-            FrameHeader(title: "مطمئن شوید در دامنه رسمی نوبیتکس هستید", icon: "lock.shield", color: .warning),
-            FrameHeader(title: "قیمت بیت کوین به بالای ۶۰ هزار دلار رسید", icon: "arrow.up.right", color: .hot),
-            FrameHeader(title: "لطفا پس از ثبت نام احراز هویت کنید", icon: "person.fill.checkmark", color: .active),
-        ]
-        let formFrame = createFormFrameView(with: headers)
-        formFrame.translatesAutoresizingMaskIntoConstraints = false
-        formStack.addArrangedSubview(formFrame)
-        
-        formStack.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(formStack)
-        NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: formStack, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0),
-            NSLayoutConstraint(item: formStack, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0),
-            
-            NSLayoutConstraint(item: formStack, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 1.0, constant: -40.0),
-        ])
-        
-        
-        NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: formFrame, attribute: .width, relatedBy: .equal, toItem: formStack, attribute: .width, multiplier: 1.0, constant: 0.0)
-        ])
+    required init(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    func createFormFrameView(with header: [FrameHeader]) -> UIView {
-        let stack = UIStackView()
-        stack.spacing = 0.0
-        stack.axis = .vertical
-        stack.distribution = .fillProportionally
-        stack.alignment = .center
+    func addHeaders(headers: [FrameHeader]) {
         
-        if header.count != 0 {
-            
-            var item = header[0]
-            
-            let frameTop = UIView()
-            frameTop.backgroundColor = item.color.withAlphaComponent(0.25)
-            
-            frameTop.translatesAutoresizingMaskIntoConstraints = false
-            stack.addArrangedSubview(frameTop)
-            
-            NSLayoutConstraint.activate([
-                NSLayoutConstraint(item: frameTop, attribute: .height, relatedBy: .equal, toItem: stack, attribute: .height, multiplier: 0.0, constant: 50),
-                NSLayoutConstraint(item: frameTop, attribute: .width, relatedBy: .equal, toItem: stack, attribute: .width, multiplier: 1.0, constant: 0.0),
-            ])
-            
-            frameTop.layer.cornerRadius = 10.0
-            frameTop.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-            
-            let headerTitleStack = UIStackView()
-            headerTitleStack.axis = .horizontal
-            headerTitleStack.alignment = .center
-            headerTitleStack.spacing = 6.0
-            headerTitleStack.distribution = .fill
-            
-            let textView = UILabel()
-            textView.text = item.title
-            textView.font = .systemFont(ofSize: 12.0, weight: .semibold)
-            textView.textColor = .mainText
-            textView.translatesAutoresizingMaskIntoConstraints = false
-            headerTitleStack.addArrangedSubview(textView)
-            
-            let imageView = UIImageView(image: .init(systemName: item.icon))
-            imageView.tintColor = item.color
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.contentMode = .scaleAspectFit
-            headerTitleStack.addArrangedSubview(imageView)
-            NSLayoutConstraint.activate([
-                NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: headerTitleStack, attribute: .width, multiplier: 0.0, constant: 20.0),
-            ])
-            
-            headerTitleStack.translatesAutoresizingMaskIntoConstraints = false
-            frameTop.addSubview(headerTitleStack)
-            NSLayoutConstraint.activate([
-                NSLayoutConstraint(item: headerTitleStack, attribute: .centerX, relatedBy: .equal, toItem: frameTop, attribute: .centerX, multiplier: 1.0, constant: 0.0),
-                NSLayoutConstraint(item: headerTitleStack, attribute: .centerY, relatedBy: .equal, toItem: frameTop, attribute: .centerY, multiplier: 1.0, constant: 0.0),
-            ])
-            
-            self.timer = Timer.scheduledTimer(withTimeInterval: 4.0, repeats: true) { t in
-                if let index = header.firstIndex(where: { $0.title == item.title }) {
-                    if index < header.count - 1 {
-                        item = header[index + 1]
-                    } else {
-                        item = header[0]
-                    }
-                }
-                
-                let bgAnimation = CABasicAnimation(keyPath: "backgroundColor")
-                bgAnimation.duration = 1.0
-                bgAnimation.fromValue = frameTop.backgroundColor
-                bgAnimation.toValue = item.color.withAlphaComponent(0.25)
-                bgAnimation.isRemovedOnCompletion = true
-                frameTop.layer.add(bgAnimation, forKey: "colourAnimation")
-                frameTop.backgroundColor = item.color.withAlphaComponent(0.25)
-                
-                UIView.animate(withDuration: 1.0) {
-                    textView.text = item.title
-                    imageView.image = UIImage(systemName: item.icon)
-                    imageView.tintColor = item.color
-                }
-                
-            }
-            
+        self.headerItems = headers
+        frameTop.backgroundColor = headerItems[0].color.withAlphaComponent(0.25)
+        headerCollection?.reloadData()
+    }
+}
+
+
+extension LoginFormHeaderView: UICollectionViewDelegate,
+                               UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        frameTop.frame.size
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.headerItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? HeaderItemCollectionViewCell else {
+            return UICollectionViewCell()
         }
         
+        let item = headerItems[indexPath.item]
+        cell.textView.text = item.title
+        cell.imageView.image = UIImage(systemName: item.icon)
+        cell.imageView.tintColor = item.color
         
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        return stack
+        guard let cell = cell as? HeaderItemCollectionViewCell else {
+            return
+        }
+        
+        cell.layoutViews()
+        
+        let item = headerItems[indexPath.item]
+        let bgAnimation = CABasicAnimation(keyPath: "backgroundColor")
+        bgAnimation.duration = 1.0
+        bgAnimation.fromValue = frameTop.backgroundColor
+        bgAnimation.toValue = item.color.withAlphaComponent(0.25)
+        bgAnimation.isRemovedOnCompletion = true
+        frameTop.layer.add(bgAnimation, forKey: "colourAnimation")
+        frameTop.backgroundColor = item.color.withAlphaComponent(0.25)
+    }
+}
+
+
+class LoginFormView: UIStackView {
+    
+    let headers = [
+        FrameHeader(title: "مطمئن شوید در دامنه رسمی نوبیتکس هستید", icon: "lock.shield", color: .warning),
+        FrameHeader(title: "قیمت بیت کوین به بالای ۶۰ هزار دلار رسید", icon: "arrow.up.right", color: .hot),
+        FrameHeader(title: "لطفا پس از ثبت نام احراز هویت کنید", icon: "person.fill.checkmark", color: .active),
+    ]
+    
+    let topLogoView = LoginLogoView()
+    let headerView = LoginFormHeaderView()
+    
+    init() {
+        super.init(frame: .zero)
+        
+        self.axis = .vertical
+        self.distribution = .equalSpacing
+        self.alignment = .center
+        self.spacing = 20
+        
+        topLogoView.translatesAutoresizingMaskIntoConstraints = false
+        self.addArrangedSubview(topLogoView)
+        
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        self.addArrangedSubview(headerView)
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: headerView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1.0, constant: 0.0)
+        ])
+        
+        headerView.addHeaders(headers: headers)
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class LoginViewController: UIViewController {
+    
+    let formView = LoginFormView()
+    
+    func createFormView() {
+        
+        view.addSubview(formView)
+        formView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: formView, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: formView, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1.0, constant: 0.0),
+            
+            NSLayoutConstraint(item: formView, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 1.0, constant: -40.0),
+        ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -173,11 +288,74 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     override func loadView() {
         self.view = UIView()
         self.view.backgroundColor = .mainBackground
         navigationItem.hidesBackButton = true
         createFormView()
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+final class LoginLogoView: UIStackView {
+    
+    let image = UIImageView()
+    let text = UILabel()
+    
+    init() {
+        super.init(frame: .zero)
+        
+        self.axis = .horizontal
+        self.spacing = 12
+        self.distribution = .fill
+        
+        let image = UIImageView(image: UIImage(named: "logo"))
+        image.translatesAutoresizingMaskIntoConstraints = false
+        
+        let text = UILabel()
+        text.text = "NOBITEX"
+        text.font = .systemFont(ofSize: 48.0, weight: .semibold)
+        text.textColor = .mainTheme
+        text.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addArrangedSubview(image)
+        self.addArrangedSubview(text)
+        
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: image, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 0.0, constant: 45.0),
+            NSLayoutConstraint(item: image, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0.0, constant: 45.0),
+        ])
+    }
+    
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
     }
 }

@@ -51,13 +51,13 @@ class NavigationController: UIViewController {
         
         animatedView.layer.shadowRadius = 0
         animatedView.layer.shadowColor = UIColor.mainTheme.withAlphaComponent(0.5).cgColor
-        animatedView.layer.shadowOffset = CGSize.zero
-        animatedView.layer.shadowOpacity = 1
+        animatedView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        animatedView.layer.shadowOpacity = 0.5
         
         let layerAnimation = CABasicAnimation(keyPath: "shadowRadius")
         layerAnimation.fromValue = 0.0
         layerAnimation.toValue = 15.0
-        layerAnimation.isAdditive = false
+        layerAnimation.isAdditive = true
         layerAnimation.duration = CFTimeInterval(3.0)
         layerAnimation.fillMode = CAMediaTimingFillMode.forwards
         layerAnimation.isRemovedOnCompletion = false
